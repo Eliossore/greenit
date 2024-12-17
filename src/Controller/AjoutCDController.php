@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AjoutCDController extends AbstractController
 {
-    #[Route('/ajout/c/d', name: 'app_ajout_c_d')]
+    #[Route('/ajout/cd', name: 'app_ajout_c_d')]
     public function index(): Response
     {
         return $this->render('ajout_cd/index.html.twig', [

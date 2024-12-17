@@ -1,3 +1,4 @@
+{# templates/main/index.html.twig #}
 {% extends 'base.html.twig' %}
 
 {% block title %}Liste des CDs{% endblock %}
@@ -14,6 +15,7 @@
                 <th>Genre</th>
                 <th>Prix</th>
                 <th>Image</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,15 +27,15 @@
                     <td>{{ cd.genre }}</td>
                     <td>{{ cd.prix }}€</td>
                     <td><img src="{{ cd.pochette }}" alt="Pochette" width="50"></td>
-                    <!-- Bouton pour voir les détails du CD -->
-                    <td><a href="{{cd/details}}" class="btn btn-info">Voir les détails</a></td>
-                    
+
                     <!-- Bouton pour ajouter le CD au panier -->
-                    <td><a href="youtube.com" class="btn btn-primary">Ajouter au panier</a></td>
+                    <td><a href="{{ path('app_main') }}?add_to_cart={{ cd.id }}" class="btn btn-primary">Ajouter au panier</a></td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-    <!-- Bouton pour accéder au panier -->
-    <a href="youtube.com" class="btn btn-success">Voir le panier</a>
+
+    <!-- Lien pour voir le panier -->
+    <a href="{{ path('app_cart') }}" class="btn btn-success">Voir le panier</a>
+
 {% endblock %}

@@ -1,0 +1,37 @@
+{# templates/main/cart.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+    <h1>Votre panier</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Quantité</th>
+                <th>Prix unitaire</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cdId, quantity in cart %}
+                <tr>
+                    <td>{{ cdId }}</td>
+                    <td>{{ cds[cdId].titre }}</td> <!-- Vous devrez peut-être récupérer le CD via l'ID -->
+                    <td>{{ quantity }}</td>
+                    <td>{{ cds[cdId].prix }}€</td>
+                    <td>{{ cds[cdId].prix * quantity }}€</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Votre panier est vide.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_main') }}" class="btn btn-info">Continuer les achats</a>
+{% endblock %}
