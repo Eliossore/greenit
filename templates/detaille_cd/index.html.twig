@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du CD{% endblock %}
+
+{% block body %}
+<h2>Détails du CD</h2>
+<p><strong>Titre :</strong> {{ cd.titre }}</p>
+<p><strong>Auteur :</strong> {{ cd.auteur }}</p>
+<p><strong>Genre :</strong> {{ cd.genre }}</p>
+<p><strong>Prix :</strong> {{ cd.prix }} €</p>
+{% if cd.pochette %}
+    <img src="{{ cd.pochette }}" alt="Pochette du CD" style="max-width: 200px;">
+{% endif %}
+{% endblock %}
