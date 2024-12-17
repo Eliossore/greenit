@@ -26,7 +26,12 @@
                     <td>{{ cd.prix }}€</td>
                     <td><img src="{{ cd.pochette }}" alt="Pochette" width="50"></td>
                     <!-- Bouton pour voir les détails du CD -->
-                    <td><a href="{{cd/details}}" class="btn btn-info">Voir les détails</a></td>
+                    <td>
+                        <a href="{{ path('cd_details', { id: cd.id, titre: cd.titre }) }}" class="btn btn-info">
+                            Voir les détails
+                        </a>
+                    </td>
+
                     
                     <!-- Bouton pour ajouter le CD au panier -->
                     <td><a href="youtube.com" class="btn btn-primary">Ajouter au panier</a></td>
