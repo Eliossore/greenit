@@ -27,7 +27,14 @@
                     <td>{{ cd.genre }}</td>
                     <td>{{ cd.prix }}€</td>
                     <td><img src="{{ cd.pochette }}" alt="Pochette" width="50"></td>
+                    <!-- Bouton pour voir les détails du CD -->
+                    <td>
+                        <a href="{{ path('cd_details', { id: cd.id, titre: cd.titre }) }}" class="btn btn-info">
+                            Voir les détails
+                        </a>
+                    </td>
 
+                    
                     <!-- Bouton pour ajouter le CD au panier -->
                     <td><a href="{{ path('app_main') }}?add_to_cart={{ cd.id }}" class="btn btn-primary">Ajouter au panier</a></td>
                 </tr>

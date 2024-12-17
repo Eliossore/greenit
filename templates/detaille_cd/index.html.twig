@@ -8,7 +8,5 @@
 <p><strong>Auteur :</strong> {{ cd.auteur }}</p>
 <p><strong>Genre :</strong> {{ cd.genre }}</p>
 <p><strong>Prix :</strong> {{ cd.prix }} €</p>
-{% if cd.pochette %}
-    <img src="{{ cd.pochette }}" alt="Pochette du CD" style="max-width: 200px;">
-{% endif %}
+<td><img src="{{ cd.pochette }}" alt="Pochette" width="200"></td>
 {% endblock %}
